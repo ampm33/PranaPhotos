@@ -12,13 +12,50 @@
       <h1>About Adri Meyer</h1>
 
       <nav aria-label="Primary navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Adri</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="videography.html">Videography</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+       <!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <a class="brand__link" href="index.html">PranaPhotos</a>
+    <div class="brand__sub">Photography • Video</div>
+  </div>
+
+  <nav class="nav" aria-label="Primary">
+    <a class="nav__link" href="index.html">Home</a>
+    <a class="nav__link" href="about.html">About Adri</a>
+    <a class="nav__link is-active" href="portfolio.html">Portfolio</a>
+    <a class="nav__link" href="videography.html">Videography</a>
+    <a class="nav__link" href="contact.html">Contact</a>
+  </nav>
+
+  <footer class="sidebar__footer">
+    <small>© 2026 PranaPhotos</small>
+  </footer>
+</aside>
+
+<!-- Mobile top bar -->
+<header class="topbar">
+  <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+    <span class="menuBtn__lines" aria-hidden="true"></span>
+  </button>
+  <a class="topbar__brand" href="index.html">PranaPhotos</a>
+</header>
+
+<!-- Page content -->
+<main class="content" id="content">
+  <h1>Portfolio</h1>
+
+  <h2>Photography Work</h2>
+  <p>
+    This portfolio is organized by category so visitors can quickly understand the type of work I make...
+  </p>
+
+  <!-- the rest of your portfolio content stays the same -->
+</main>
+
+<div class="backdrop" id="backdrop" hidden></div>
+
+<script src="menu.js"></script>
+
       </nav>
     </header>
 
@@ -57,3 +94,23 @@
     </footer>
   </body>
 </html>
+<body>
+  <aside class="sidebar">
+    <a class="brand__link" href="index.html">PRANAPHOTOS</a>
+    <div class="brand__sub">PHOTO / VIDEO</div>
+
+    <nav class="nav">
+      <a class="nav__link" href="index.html">HOME</a>
+      <a class="nav__link" href="about.html">ABOUT</a>
+      <a class="nav__link" href="portfolio.html">PORTFOLIO</a>
+      <a class="nav__link" href="videography.html">VIDEOGRAPHY</a>
+      <a class="nav__link" href="contact.html">CONTACT</a>
+    </nav>
+
+    <div class="sidebar__footer">© PRANAPHOTOS</div>
+  </aside>
+
+  <main class="content">
+    <!-- your page content here -->
+  </main>
+</body>
