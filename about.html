@@ -9,31 +9,31 @@
 
   <body>
     <div class="layout">
-      <!-- SIDEBAR -->
       <aside class="sidebar">
         <div class="brand">
           <div class="title">PRANAPHOTOS</div>
-          <!-- If you don't want this line, delete it -->
-          <!-- <div class="subtitle">PHOTO / VIDEO</div> -->
+          <div class="subtitle">PHOTO / VIDEO</div>
         </div>
 
-        <nav class="nav" aria-label="Primary">
+        <nav class="nav" aria-label="Primary navigation">
           <a href="index.html">HOME</a>
-          <a href="about.html">ABOUT</a>
+          <a href="about.html" aria-current="page">ABOUT</a>
           <a href="portfolio.html">PORTFOLIO</a>
           <a href="videography.html">VIDEOGRAPHY</a>
           <a href="contact.html">CONTACT</a>
         </nav>
 
-      <!-- PAGE CONTENT -->
-      <main class="content">
+        <div class="sidebar-footer">© 2026 PRANAPHOTOS</div>
+      </aside>
+
+      <main class="content" id="main">
         <div class="content-inner">
           <section class="section">
             <h1>ABOUT</h1>
           </section>
 
-          <section class="section">
-            <h2>BIO</h2>
+          <section class="section" aria-labelledby="bio">
+            <h2 id="bio">BIO</h2>
             <p>
               HELLO! I AM A CREATIVE SPECIALIZING IN PHOTOGRAPHY, WITH OVER 5 YEARS OF
               PROFESSIONAL EXPERIENCE. I FOCUS ON MAKING IMAGES THAT FEEL GROUNDED,
@@ -51,8 +51,8 @@
             </p>
           </section>
 
-          <section class="section">
-            <h2>WHAT I VALUE</h2>
+          <section class="section" aria-labelledby="values">
+            <h2 id="values">WHAT I VALUE</h2>
             <ul>
               <li>CONSISTENCY IN VISUAL TONE AND BRAND IDENTITY</li>
               <li>STORYTELLING THAT FEELS REAL, NOT FORCED</li>
@@ -64,11 +64,3 @@
     </div>
   </body>
 </html>
-<footer class="site-footer">
-  <p>
-    © 2026 PRANAPHOTOS ·
-    <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener">INSTAGRAM</a>
-    ·
-    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">LINKEDIN</a>
-  </p>
-</footer>

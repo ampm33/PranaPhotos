@@ -3,79 +3,63 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PranaPhotos | Home</title>
+    <title>HOME | PRANAPHOTOS</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <header>
-      <h1>PranaPhotos</h1>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="title">PRANAPHOTOS</div>
+          <div class="subtitle">PHOTO / VIDEO</div>
+        </div>
 
-      <nav aria-label="Primary navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="videography.html">Videography</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="index.html" aria-current="page">HOME</a>
+          <a href="about.html">ABOUT</a>
+          <a href="portfolio.html">PORTFOLIO</a>
+          <a href="videography.html">VIDEOGRAPHY</a>
+          <a href="contact.html">CONTACT</a>
+        </nav>
 
-    <main>
-      <section>
-        <h2>Welcome</h2>
-        <p>
-          PranaPhotos is a creative studio led by Adri Meyer, built around calm,
-          intentional visual storytelling. This website is a multi-page project focused
-          on structure, navigation, and meaning-first HTML.
-        </p>
-        <p>
-          The goal is to organize content clearly before any major design work. By using
-          semantic sections and logical headings, each page stays readable and easy to
-          expand later.
-        </p>
-        <p>
-          As the site grows, these pages will become a home for photo and video work,
-          creative direction, and brand identity projects. For now, the foundation is
-          designed to meet the Release 2 requirements cleanly.
-        </p>
-      </section>
+        <div class="sidebar-footer">© 2026 PRANAPHOTOS</div>
+      </aside>
 
-      <section>
-        <h2>Featured Image</h2>
-        <figure>
-          <img
-            src="images/hero.jpg"
-            alt="A featured PranaPhotos image representing Adri Meyer's photography style"
-            width="480"
-          />
-          <figcaption>Featured image with accessible alt text.</figcaption>
-        </figure>
-      </section>
+      <main class="content" id="main">
+        <div class="content-inner">
+          <section class="section" aria-labelledby="welcome">
+            <h1 id="welcome">WELCOME</h1>
+            <p>
+              PRANAPHOTOS IS A CREATIVE STUDIO LED BY ADRI MEYER, BUILT AROUND CALM,
+              INTENTIONAL VISUAL STORYTELLING. THIS WEBSITE IS A MULTI-PAGE PROJECT FOCUSED
+              ON STRUCTURE, NAVIGATION, AND MEANING-FIRST HTML.
+            </p>
+            <p>
+              THE GOAL IS TO ORGANIZE CONTENT CLEARLY BEFORE ANY MAJOR DESIGN WORK. BY USING
+              SEMANTIC SECTIONS AND LOGICAL HEADINGS, EACH PAGE STAYS READABLE AND EASY TO
+              EXPAND LATER.
+            </p>
+            <p>
+              AS THE SITE GROWS, THESE PAGES WILL BECOME A HOME FOR PHOTO AND VIDEO WORK,
+              CREATIVE DIRECTION, AND BRAND IDENTITY PROJECTS. FOR NOW, THE FOUNDATION IS
+              DESIGNED TO MEET THE RELEASE 2 REQUIREMENTS CLEANLY.
+            </p>
+          </section>
 
-    <footer>
-      <p>&copy; 2026 PranaPhotos</p>
-    </footer>
+          <section class="section" aria-labelledby="featured">
+            <h2 id="featured">FEATURED IMAGE</h2>
+            <figure>
+              <img
+                src="images/hero.jpg"
+                alt="A featured PranaPhotos image representing Adri Meyer's photography style"
+                width="480"
+              />
+              <figcaption>FEATURED IMAGE WITH ACCESSIBLE ALT TEXT.</figcaption>
+            </figure>
+          </section>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
-<body>
-  <aside class="sidebar">
-    <a class="brand__link" href="index.html">PRANAPHOTOS</a>
-    <div class="brand__sub">PHOTO / VIDEO</div>
-
-    <nav class="nav">
-      <a class="nav__link" href="index.html">HOME</a>
-      <a class="nav__link" href="about.html">ABOUT</a>
-      <a class="nav__link" href="portfolio.html">PORTFOLIO</a>
-      <a class="nav__link" href="videography.html">VIDEOGRAPHY</a>
-      <a class="nav__link" href="contact.html">CONTACT</a>
-    </nav>
-
-    <div class="sidebar__footer">© PRANAPHOTOS</div>
-  </aside>
-
-  <main class="content">
-    <!-- your page content here -->
-  </main>
-</body>
