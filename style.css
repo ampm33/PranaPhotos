@@ -203,3 +203,46 @@ img{ max-width: 100%; height: auto; display: block; }
   .content{ padding: 32px 24px; }
   .content-inner{ max-width: 100%; }
 }
+/* ==========
+   HOME HERO BACKGROUND
+   (HOME PAGE ONLY)
+   ========== */
+
+.home-hero {
+  position: relative;
+  min-height: 100vh;              /* full screen */
+  display: flex;
+  align-items: center;
+}
+
+.home-hero::before {
+  content: "";
+  position: fixed;                /* stays put on scroll */
+  inset: 0;
+  background-image: url("images/hero.jpg"); /* CHANGE IF NEEDED */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+/* dark overlay for readability */
+.home-hero::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);   /* adjust darkness here */
+  z-index: -1;
+}
+
+/* text on hero */
+.home-hero h1,
+.home-hero p {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+/* constrain text width for elegance */
+.home-hero .content-inner {
+  max-width: 680px;
+}
