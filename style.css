@@ -1,25 +1,20 @@
-/* ==========
-   RESET
-   ========== */
-* { box-sizing: border-box; }
-html { overflow-y: scroll; }
-body { margin: 0; }
+/* =========================================================
+   PRANAPHOTOS — Clean, mobile-first, accessible CSS
+   Keeps your current aesthetic (Times, uppercase, light UI)
+========================================================= */
 
-/* Accessibility: skip link */
-.skip-link{
-  position: absolute;
-  left: -999px;
-  top: 12px;
-  background: #fff;
-  border: 1px solid #d9d9d9;
-  padding: 10px 12px;
-  letter-spacing: 0.12em;
-}
-.skip-link:focus{ left: 12px; }
+/* ========== RESET / BASE ========== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-/* ==========
-   TOKENS
-   ========== */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; overflow-y: scroll; }
+body { margin: 0; line-height: 1.6; }
+
+img,
+video { max-width: 100%; height: auto; display: block; }
+
+/* ========== TOKENS ========== */
 :root{
   --sidebar-w: 320px;
   --page-pad-x: 72px;
@@ -30,17 +25,16 @@ body { margin: 0; }
   --card: #ffffff;
   --rule: #d9d9d9;
   --text: #111;
+
+  --focus: #111; /* visible on light bg */
 }
 
-/* ==========
-   GLOBAL TYPE
-   ========== */
+/* ========== GLOBAL TYPE ========== */
 body{
   font-family: "Times New Roman", Times, Georgia, serif;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 14px;
-  line-height: 1.6;
   color: var(--text);
   background: var(--bg);
 }
@@ -50,50 +44,84 @@ h1, h2, h3{
   letter-spacing: 0.12em;
   margin: 0 0 0.75rem 0;
 }
+
 p{ margin: 0 0 1rem 0; }
 
-a{ color: inherit; text-decoration: none; }
-a:hover{ opacity: 0.7; }
+a{
+  color: inherit;
+  text-decoration: none;
+}
 
-img{ max-width: 100%; height: auto; display: block; }
+a:hover{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
-/* ==========
-   LAYOUT
-   ========== */
+/* Visible keyboard focus (WCAG-friendly) */
+:focus-visible{
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* ========== ACCESSIBILITY HELPERS ========== */
+.skip-link{
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  background: #fff;
+  border: 1px solid var(--rule);
+  padding: 10px 12px;
+  letter-spacing: 0.12em;
+  z-index: 9999;
+}
+
+.skip-link:focus{ left: 12px; }
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========== LAYOUT (MOBILE-FIRST) ========== */
+/* Mobile default: stacked layout */
 .layout{
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
 }
 
-/* Sidebar = ONLY white box */
+/* Sidebar becomes top header on mobile */
 .sidebar{
-  width: var(--sidebar-w);
-  flex: 0 0 var(--sidebar-w);
-  padding: 48px 32px 32px;
-  border-right: 1px solid var(--rule);
+  width: 100%;
+  padding: 32px 24px;
+  border-bottom: 1px solid var(--rule);
   background: var(--card);
-
-  position: sticky;
-  top: 0;
-  height: 100vh;
 }
 
-.brand{ margin-bottom: 40px; }
+.brand{ margin-bottom: 22px; }
 
 .brand .title{
   font-size: 18px;
   letter-spacing: 0.18em;
-  margin: 0 0 14px 0;
+  margin: 0 0 10px 0;
 }
 
-/* Hide subtitle everywhere */
+/* keep hidden (your preference) */
 .brand .subtitle{ display: none; }
 
+/* Mobile nav: wraps horizontally */
 .nav{
   display: flex;
-  flex-direction: column;
-  gap: 22px;
-  margin-top: 18px;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  margin-top: 8px;
 }
 
 .nav a{
@@ -101,14 +129,15 @@ img{ max-width: 100%; height: auto; display: block; }
   padding: 6px 0;
 }
 
-.nav a[aria-current="page"]{ opacity: 0.6; }
+/* Current page indicator */
+.nav a[aria-current="page"]{
+  opacity: 0.65;
+  text-decoration: none;
+}
 
-/* Footer stays at bottom of sidebar */
+/* Footer: normal flow on mobile */
 .sidebar-footer{
-  position: absolute;
-  left: 32px;
-  right: 32px;
-  bottom: 24px;
+  margin-top: 22px;
   padding-top: 18px;
   border-top: 1px solid var(--rule);
   font-size: 12px;
@@ -116,11 +145,11 @@ img{ max-width: 100%; height: auto; display: block; }
   opacity: 0.85;
 }
 
-/* Content sits on GRAY background (not white) */
+/* Content */
 .content{
   flex: 1;
+  padding: 32px 24px;
   background: transparent;
-  padding: var(--page-pad-y) var(--page-pad-x);
 }
 
 .content-inner{
@@ -129,12 +158,27 @@ img{ max-width: 100%; height: auto; display: block; }
 
 .section{ margin-bottom: 48px; }
 
-/* ==========
-   PLACEHOLDERS (portfolio / videography)
-   ========== */
+/* ========== SHARED COMPONENTS ========== */
+.btn{
+  display: inline-block;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: 0.12em;
+  text-transform: inherit;
+}
+
+.btn:hover{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ========== PLACEHOLDERS (portfolio / videography) ========== */
 .grid{
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr; /* mobile first */
   gap: 22px;
 }
 
@@ -166,9 +210,7 @@ img{ max-width: 100%; height: auto; display: block; }
   opacity: 0.9;
 }
 
-/* ==========
-   HOME HERO BACKGROUND (HOME PAGE ONLY)
-   ========== */
+/* ========== HOME HERO BACKGROUND (HOME PAGE ONLY) ========== */
 .home-hero{
   position: relative;
   min-height: 100vh;
@@ -205,111 +247,54 @@ img{ max-width: 100%; height: auto; display: block; }
   max-width: 680px;
 }
 
-/* ==========
-   RESPONSIVE
-   ========== */
-@media (max-width: 900px){
-  :root{
-    --sidebar-w: 260px;
-    --page-pad-x: 40px;
-  }
-  .grid{ grid-template-columns: 1fr; }
-}
-
-@media (max-width: 720px){
-  .layout{ flex-direction: column; }
-
-  .sidebar{
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .sidebar-footer{
-    position: relative;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin-top: 28px;
-  }
-
-  .content{ padding: 32px 24px; }
-  .content-inner{ max-width: 100%; }
-
-  /* iOS/Safari fix: fixed background can be janky; switch to scroll */
-  .home-hero::before,
-  .home-hero::after{
-    position: absolute;
-  }
-}
-/* =========================
-   CONTACT PAGE
-   ========================= */
-
-.contact-sub {
+/* ========== CONTACT PAGE ========== */
+.contact-sub{
   max-width: 60ch;
   opacity: 0.85;
   margin-top: 0.5rem;
 }
 
-.contact-grid {
+.contact-grid{
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
 .contact-left,
-.contact-right {
+.contact-right{
   border-top: 1px solid rgba(0, 0, 0, 0.18);
   padding-top: 1.25rem;
 }
 
-/* Optional image */
-.contact-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+.contact-image img{ width: 100%; height: auto; display: block; }
 
-/* Details */
-.contact-details {
+.contact-details{
   margin-top: 1rem;
   display: grid;
   gap: 0.75rem;
 }
 
-.detail-row {
+.detail-row{
   display: grid;
   grid-template-columns: 7.5rem 1fr;
   gap: 1rem;
   align-items: baseline;
 }
 
-.detail-label {
+.detail-label{
   opacity: 0.65;
   letter-spacing: 0.12em;
 }
 
-.detail-value {
-  color: inherit;
-  text-decoration: none;
-}
+.detail-value{ color: inherit; }
 
-.detail-value:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-
-/* Form */
-.contact-form {
+.contact-form{
   max-width: 560px;
   display: grid;
   gap: 0.9rem;
 }
 
-.field label {
+.field label{
   display: block;
   margin-bottom: 0.35rem;
   opacity: 0.75;
@@ -317,7 +302,7 @@ img{ max-width: 100%; height: auto; display: block; }
 }
 
 .field input,
-.field textarea {
+.field textarea{
   width: 100%;
   padding: 0.75rem 0.85rem;
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -326,96 +311,55 @@ img{ max-width: 100%; height: auto; display: block; }
   font: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
-  outline: none;
 }
 
 .field input:focus,
-.field textarea:focus {
+.field textarea:focus{
   border-color: rgba(0, 0, 0, 0.6);
 }
 
-.btn {
-  padding: 0.9rem 1.1rem;
-  border: 1px solid rgba(0, 0, 0, 0.6);
-  background: transparent;
-  cursor: pointer;
-  font: inherit;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.btn:hover {
-  opacity: 0.85;
-}
-
-.form-note {
+.form-note{
   margin: 0.25rem 0 0;
   font-size: 0.9em;
   opacity: 0.7;
 }
 
-.honeypot {
-  display: none !important;
+/* Honeypot (spam trap) — hidden offscreen but present in DOM */
+.honeypot{
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
-/* Desktop: 2 columns */
-@media (min-width: 900px) {
-  .contact-grid {
-    flex-direction: row;
-    gap: 2.5rem;
-    align-items: start;
-  }
+/* ========== VIDEOGRAPHY PORTFOLIO GRID ========== */
+.section-head{ margin-bottom: 1rem; }
 
-  .contact-left {
-    flex: 1;
-    max-width: 420px;
-  }
-
-  .contact-right {
-    flex: 1;
-  }
-
-  .contact-left,
-  .contact-right {
-    border-top: none;
-    padding-top: 0;
-  }
-}
-/* =========================
-   VIDEOGRAPHY PORTFOLIO GRID
-   ========================= */
-
-.section-head {
-  margin-bottom: 1rem;
-}
-
-.section-sub {
+.section-sub{
   margin: 0.5rem 0 0;
   max-width: 70ch;
   opacity: 0.8;
 }
 
-/* Grid */
-.video-grid {
+.video-grid{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* mobile first */
   gap: 1.5rem;
 }
 
-/* Card */
-.video-card {
+.video-card{
   border-top: 1px solid rgba(0,0,0,0.18);
   padding-top: 1.25rem;
 }
 
-/* Responsive embed base */
-.video-embed {
+.video-embed{
   position: relative;
   width: 100%;
   background: #000;
 }
 
-.video-embed iframe {
+.video-embed iframe{
   position: absolute;
   inset: 0;
   width: 100%;
@@ -423,210 +367,128 @@ img{ max-width: 100%; height: auto; display: block; }
   border: 0;
 }
 
-/* Aspect ratios */
-.video-16x9 { padding-top: 56.25%; }  /* 16:9 */
-.video-9x16 { padding-top: 177.78%; } /* 9:16 */
+.video-16x9{ padding-top: 56.25%; }
+.video-9x16{ padding-top: 177.78%; }
 
-/* Meta */
-.video-meta {
+.video-meta{
   margin-top: 0.9rem;
   display: grid;
   gap: 0.35rem;
   max-width: 70ch;
 }
 
-.video-meta h3 {
+.video-meta h3{
   margin: 0;
   letter-spacing: 0.12em;
 }
 
-.video-meta p {
+.video-meta p{
   margin: 0;
   opacity: 0.85;
 }
 
-.video-link {
+.video-link{
   display: inline-block;
   margin-top: 0.35rem;
-  color: inherit;
-  text-decoration: none;
   border-bottom: 1px solid rgba(0,0,0,0.5);
   padding-bottom: 0.15rem;
   width: fit-content;
 }
 
-.video-link:hover {
-  opacity: 0.85;
+.video-link:hover{
+  text-decoration: none;
+  opacity: 1;
 }
 
-/* Desktop layout */
-@media (min-width: 900px) {
-  .video-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
-  /* keep vertical shorts from becoming insanel*
-/* =========================
-   CONTACT PAGE LAYOUT
-   ========================= */
-
-.page-header {
-  max-width: 680px;
-  padding: 3rem 1.5rem 1rem;
-}
-
-.page-title {
-  margin: 0 0 0.75rem;
-  letter-spacing: 0.14em;
-}
-
-.page-subtitle {
-  margin: 0;
-  max-width: 60ch;
-}
-
-.contact-wrap {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  padding: 1rem 1.5rem 3rem;
-}
-
-@media (min-width: 900px) {
-  .contact-wrap {
-    grid-template-columns: minmax(520px, 680px) 1fr;
-    align-items: start;
-    gap: 3rem;
-  }
-}
-
-.contact-form {
-  max-width: 680px;
-}
-
-.field {
-  margin-bottom: 1.25rem;
-}
-
-label {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.12em;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  border: 1px solid #111;
-  background: transparent;
-  padding: 0.85rem 0.9rem;
-  font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 160px;
-}
-
-.hint {
-  margin: 0.75rem 0 0;
-  font-size: 0.9em;
-  letter-spacing: 0.1em;
-  color: #333;
-}
-
-.btn {
-  display: inline-block;
-  border: 1px solid #111;
-  background: #111;
-  color: #fff;
-  padding: 0.9rem 1.2rem;
-  font: inherit;
-  letter-spacing: 0.12em;
-  text-transform: inherit;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: transparent;
-  color: #111;
-}
-
-.form-note {
-  margin-top: 1rem;
-  color: #333;
-}
-
-/* =========================
-   ASIDE CARDS
-   ========================= */
-
-.contact-aside {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.card {
-  border: 1px solid #111;
-  padding: 1.25rem;
-}
-
-.card-title {
-  margin: 0 0 0.75rem;
-  font-size: 1rem;
-  letter-spacing: 0.14em;
-}
-
-.card-text {
-  margin: 0.4rem 0;
-}
-
-.card a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.card-list {
-  margin: 0.5rem 0 0;
-  padding-left: 1.25rem;
-}
-
-/* =========================
-   ACCESSIBLE FOCUS
-   ========================= */
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid currentColor;
-  outline-offset: 3px;
-}
-
-/* =========================
-   SCROLL FADE REVEALS
-   ========================= */
-
-.reveal {
+/* ========== SCROLL FADE REVEALS ========== */
+.reveal{
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 700ms ease, transform 700ms ease;
 }
 
-.reveal.is-visible {
+.reveal.is-visible{
   opacity: 1;
   transform: translateY(0);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
+@media (prefers-reduced-motion: reduce){
+  .reveal{
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* ========== RESPONSIVE UPGRADES (DESKTOP/TABLET) ========== */
+@media (min-width: 720px){
+  .content{ padding: var(--page-pad-y) var(--page-pad-x); }
+  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 900px){
+  .layout{
+    flex-direction: row;
+  }
+
+  .sidebar{
+    width: var(--sidebar-w);
+    flex: 0 0 var(--sidebar-w);
+    padding: 48px 32px 32px;
+    border-right: 1px solid var(--rule);
+    border-bottom: none;
+
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  .nav{
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 22px;
+    margin-top: 18px;
+  }
+
+  .sidebar-footer{
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    bottom: 24px;
+    margin-top: 0;
+  }
+
+  /* Contact desktop: 2 columns */
+  .contact-grid{
+    flex-direction: row;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .contact-left{
+    flex: 1;
+    max-width: 420px;
+  }
+
+  .contact-right{ flex: 1; }
+
+  .contact-left,
+  .contact-right{
+    border-top: none;
+    padding-top: 0;
+  }
+
+  /* Videography desktop: 2 columns */
+  .video-grid{
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* iOS/Safari: fixed backgrounds can be janky on small screens */
+@media (max-width: 720px){
+  .home-hero::before,
+  .home-hero::after{
+    position: absolute;
   }
 }
