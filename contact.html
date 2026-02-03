@@ -3,15 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CONTACT | PRANAPHOTOS</title>
+    <title>CONTACT — PRANAPHOTOS</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
     <div class="layout">
       <aside class="sidebar">
         <div class="brand">
-          <div class="title">PRANAPHOTOS</div>
+          <div class="title" aria-label="PranaPhotos">PRANAPHOTOS</div>
           <div class="subtitle">PHOTO / VIDEO</div>
         </div>
 
@@ -26,34 +28,44 @@
         <div class="sidebar-footer">© 2026 PRANAPHOTOS</div>
       </aside>
 
-      <main class="content" id="main">
+      <main class="content" id="main" tabindex="-1">
         <div class="content-inner">
-          <section class="section contact-hero">
+          <header class="section contact-hero reveal">
             <h1>CONTACT</h1>
             <p class="contact-sub">
               BOOKINGS, BRAND WORK, EDITORIAL, EVENTS — SEND A NOTE AND I’LL GET BACK SOON.
             </p>
-          </section>
+          </header>
 
-          <section class="section contact-grid" aria-label="Contact">
+          <section class="section contact-grid" aria-labelledby="contact-form-heading">
             <!-- LEFT: details / image -->
-            <aside class="contact-left">
-              <!-- Optional image: add an image at images/contact.jpg or remove this whole block -->
+            <aside class="contact-left reveal">
+              <!-- If the image is just decorative, use alt="" instead of descriptive text. -->
               <div class="contact-image">
-                <img src="images/contact.jpg" alt="PranaPhotos contact" />
+                <img
+                  src="images/contact.jpg"
+                  alt="Portrait of Adri Meyer holding a camera"
+                />
               </div>
 
-              <div class="contact-details" aria-label="Contact details">
+              <div class="contact-details">
                 <div class="detail-row">
                   <span class="detail-label">EMAIL</span>
-                  <a class="detail-value" href="mailto:Pranaleyadri@gmail.com">YOURNAME@EXAMPLE.COM</a>
+                  <a class="detail-value" href="mailto:Pranaleyadri@gmail.com">
+                    PRANALEYADRI@GMAIL.COM
+                  </a>
                 </div>
 
                 <div class="detail-row">
                   <span class="detail-label">INSTAGRAM</span>
-                  <a class="detail-value" href="https://instagram.com/Pranaphotos_" target="_blank" rel="noopener"
-                    >Pranaphotos_</a
+                  <a
+                    class="detail-value"
+                    href="https://instagram.com/Pranaphotos_"
+                    target="_blank"
+                    rel="noopener"
                   >
+                    @PRANAPHOTOS_
+                  </a>
                 </div>
 
                 <div class="detail-row">
@@ -64,8 +76,10 @@
             </aside>
 
             <!-- RIGHT: form -->
-            <section class="contact-right" aria-label="Contact form">
-              <!-- IMPORTANT: Replace action URL with your Formspree endpoint -->
+            <section class="contact-right reveal">
+              <h2 id="contact-form-heading" class="sr-only">Contact form</h2>
+
+              <!-- Replace action URL with your Formspree endpoint -->
               <form class="contact-form" action="https://formspree.io/f/XXXXYYYY" method="POST">
                 <div class="field">
                   <label for="name">NAME</label>
@@ -74,7 +88,14 @@
 
                 <div class="field">
                   <label for="email">EMAIL</label>
-                  <input id="email" name="email" type="email" autocomplete="email" required />
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    inputmode="email"
+                    required
+                  />
                 </div>
 
                 <div class="field">
@@ -87,9 +108,13 @@
                   <textarea id="message" name="message" rows="6" required></textarea>
                 </div>
 
-                <!-- Optional: email subject + simple spam trap -->
+                <!-- Optional: email subject + accessible spam trap -->
                 <input type="hidden" name="_subject" value="New PranaPhotos Contact Form Submission" />
-                <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" />
+
+                <div class="honeypot" aria-hidden="true">
+                  <label for="website">WEBSITE</label>
+                  <input id="website" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+                </div>
 
                 <button class="btn" type="submit">SEND</button>
                 <p class="form-note">IF THE FORM FAILS, EMAIL ME DIRECTLY.</p>
@@ -99,5 +124,11 @@
         </div>
       </main>
     </div>
+
+    <!-- Optional scroll fade. If you create this file, it will animate .reveal elements -->
+    <script src="scroll-fade.js" defer></script>
   </body>
 </html>
+<header class="section contact-hero reveal">...</header>
+<aside class="contact-left reveal">...</aside>
+<section class="contact-right reveal">...</section>
