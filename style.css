@@ -492,3 +492,36 @@ a:hover{
     position: absolute;
   }
 }
+.placeholder {
+  display: block; /* makes the whole card clickable */
+}
+
+.placeholder:hover {
+  text-decoration: none;
+}
+
+.placeholder:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+.prints-intro {
+  max-width: 520px;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+.prints-button {
+  display: inline-block;
+  margin-top: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid black;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  transition: background 0.2s ease;
+}
+
+.prints-button:hover {
+  background: black;
+  color: white;
+}
