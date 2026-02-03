@@ -2,13 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PORTFOLIO | PRANAPHOTOS</title>
     <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <div class="layout">
       <aside class="sidebar">
         <div class="brand">
@@ -29,67 +30,45 @@
 
       <main class="content" id="main">
         <div class="content-inner">
-          <!-- TITLE / INTRO (matches videography page pattern) -->
+          <!-- TITLE / INTRO -->
           <section class="section">
             <h1>PORTFOLIO</h1>
             <p>
               THIS PORTFOLIO IS ORGANIZED BY CATEGORY SO VISITORS CAN QUICKLY UNDERSTAND
-              THE TYPE OF WORK I MAKE. EACH SECTION CAN BE EXPANDED LATER INTO FULL
-              GALLERIES OR PROJECT PAGES.
+              THE TYPE OF WORK I MAKE. EACH SECTION CAN BE EXPANDED INTO FULL GALLERIES
+              OR PROJECT PAGES.
             </p>
           </section>
 
-          <!-- CATEGORY 1 -->
-          <section class="section" aria-labelledby="featured">
-            <h2 id="featured">FEATURED</h2>
+          <!-- CATEGORIES -->
+          <section class="section" aria-labelledby="categories">
+            <h2 id="categories">CATEGORIES</h2>
 
-            <div class="grid">
-              <div class="placeholder">
-                <div class="ph-box"><span>IMAGE PLACEHOLDER 01</span></div>
-                <div class="ph-caption">CAPTION / SERIES NAME</div>
-              </div>
+            <div class="grid" aria-label="Portfolio categories">
+              <a class="placeholder" href="brand.html" aria-label="Open portfolio category: Brand">
+                <div class="ph-box"><span>BRAND</span></div>
+                <div class="ph-caption">BRAND</div>
+              </a>
 
-              <div class="placeholder">
-                <div class="ph-box"><span>IMAGE PLACEHOLDER 02</span></div>
-                <div class="ph-caption">CAPTION / SERIES NAME</div>
-              </div>
+              <a class="placeholder" href="outdoor.html" aria-label="Open portfolio category: Outdoor">
+                <div class="ph-box"><span>OUTDOOR</span></div>
+                <div class="ph-caption">OUTDOOR</div>
+              </a>
 
-              <div class="placeholder">
-                <div class="ph-box"><span>IMAGE PLACEHOLDER 03</span></div>
-                <div class="ph-caption">CAPTION / SERIES NAME</div>
-              </div>
+              <a class="placeholder" href="portraits.html" aria-label="Open portfolio category: Portraits">
+                <div class="ph-box"><span>PORTRAITS</span></div>
+                <div class="ph-caption">PORTRAITS</div>
+              </a>
 
-              <div class="placeholder">
-                <div class="ph-box"><span>IMAGE PLACEHOLDER 04</span></div>
-                <div class="ph-caption">CAPTION / SERIES NAME</div>
-              </div>
-            </div>
-          </section>
+              <a class="placeholder" href="grads.html" aria-label="Open portfolio category: Grads">
+                <div class="ph-box"><span>GRADS</span></div>
+                <div class="ph-caption">GRADS</div>
+              </a>
 
-          <!-- CATEGORY 2 (optional, mirrors videography having multiple sections) -->
-          <section class="section" aria-labelledby="selects">
-            <h2 id="selects">SELECTS</h2>
-
-            <div class="grid">
-              <div class="placeholder">
-                <div class="ph-box"><span>IMAGE PLACEHOLDER 05</span></div>
-                <div class="ph-caption">CAPTION / SERIES NAME</div>
-              </div>
-
-              <div class="placeholder">
-                <div class="ph-box"><span>IMAGE PLACEHOLDER 06</span></div>
-                <div class="ph-caption">CAPTION / SERIES NAME</div>
-              </div>
-
-              <div class="placeholder">
-                <div class="ph-box"><span>IMAGE PLACEHOLDER 07</span></div>
-                <div class="ph-caption">CAPTION / SERIES NAME</div>
-              </div>
-
-              <div class="placeholder">
-                <div class="ph-box"><span>IMAGE PLACEHOLDER 08</span></div>
-                <div class="ph-caption">CAPTION / SERIES NAME</div>
-              </div>
+              <a class="placeholder" href="fashion.html" aria-label="Open portfolio category: Fashion">
+                <div class="ph-box"><span>FASHION</span></div>
+                <div class="ph-caption">FASHION</div>
+              </a>
             </div>
           </section>
         </div>
