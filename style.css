@@ -525,3 +525,246 @@ a:hover{
   background: black;
   color: white;
 }
+/* VIDEO GRID — uniform tiles */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 1000px) {
+  .video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.video-card {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.video-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* forces same preview size */
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* makes every thumbnail fill consistently */
+  display: block;
+}
+
+.video-play {
+  position: absolute;
+  inset: auto auto 12px 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.video-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.video-meta {
+  padding: 1rem 1rem 1.15rem;
+}
+
+.video-meta h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.video-meta p {
+  margin: 0 0 0.85rem;
+  line-height: 1.55;
+  opacity: 0.85;
+}
+
+.video-link {
+  display: inline-block;
+  border: 1px solid rgba(0,0,0,0.25);
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+/* -----------------------------
+   VIDEOGRAPHY GRID (UNIFORM)
+------------------------------ */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 1000px) {
+  .video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.video-card {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.video-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* forces same preview size */
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* consistent crop */
+  display: block;
+  transform: scale(1);
+  transition: transform 180ms ease;
+}
+
+.video-thumb:hover img {
+  transform: scale(1.03);
+}
+
+.video-play {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.video-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.video-meta {
+  padding: 1rem 1rem 1.15rem;
+}
+
+.video-meta h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.video-meta p {
+  margin: 0 0 0.85rem;
+  line-height: 1.55;
+  opacity: 0.85;
+}
+
+/* Scroll fade / reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.video-link {
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+/* Scroll fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
