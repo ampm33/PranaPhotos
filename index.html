@@ -6,8 +6,6 @@
     <title>HOME | PRANAPHOTOS</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  
-<script src="scroll-fade.js" defer></script>
 
   <body>
     <a class="skip-link" href="#main">SKIP TO CONTENT</a>
@@ -25,6 +23,7 @@
           <a href="about.html">ABOUT</a>
           <a href="portfolio.html">PORTFOLIO</a>
           <a href="videography.html">VIDEOGRAPHY</a>
+          <a href="prints.html">PRINTS</a>
           <a href="contact.html">CONTACT</a>
         </nav>
 
@@ -35,23 +34,58 @@
       <main class="content" id="main" tabindex="-1">
         <section class="home-hero" aria-labelledby="welcome">
           <div class="content-inner">
-            <h1 id="welcome">WELCOME</h1>
+            <h1 id="welcome" class="reveal">WELCOME</h1>
 
-            <p>
+            <p class="reveal">
               PRANAPHOTOS IS A CREATIVE STUDIO LED BY ADRI MEYER, BUILT AROUND CALM,
               INTENTIONAL VISUAL STORYTELLING.
             </p>
-            <p>
+
+            <p class="reveal">
               THIS WEBSITE IS A MULTI-PAGE PROJECT FOCUSED ON STRUCTURE, NAVIGATION,
               AND MEANING-FIRST HTML.
             </p>
-            <p>
+
+            <p class="reveal">
               AS THE SITE GROWS, THESE PAGES WILL BECOME A HOME FOR PHOTO AND VIDEO
               WORK, CREATIVE DIRECTION, AND BRAND IDENTITY PROJECTS.
             </p>
           </div>
         </section>
+
+        <!-- Footer (ONLY on pages you want it) -->
+        <footer class="site-footer">
+          <div class="footer-logos" aria-label="Brand partnerships">
+            <img src="images/logos/milan-fashion-week.png" alt="Milan Fashion Week logo" />
+            <img src="images/logos/red-bull.png" alt="Red Bull logo" />
+            <img src="images/logos/denver-fashion-week.png" alt="Denver Fashion Week logo" />
+            <img src="images/logos/noalya.png" alt="Noalya Chocolativo logo" />
+          </div>
+
+          <div class="footer-social" aria-label="Social links">
+            <a
+              href="https://instagram.com/Pranaphotos_"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <img src="images/icons/instagram.svg" alt="" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/YOURPROFILE"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              <img src="images/icons/linkedin.svg" alt="" />
+            </a>
+          </div>
+        </footer>
       </main>
     </div>
+
+    <!-- Load once, at the end of body -->
+    <script src="scroll-fade.js" defer></script>
   </body>
 </html>

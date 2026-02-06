@@ -3,11 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CONTACT — PRANAPHOTOS</title>
+    <title>CONTACT | PRANAPHOTOS</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  
-<script src="scroll-fade.js" defer></script>
 
   <body>
     <a class="skip-link" href="#main">SKIP TO CONTENT</a>
@@ -40,13 +38,12 @@
           </header>
 
           <section class="section contact-grid" aria-labelledby="contact-form-heading">
-            <!-- LEFT: details / image -->
+            <!-- LEFT -->
             <aside class="contact-left reveal">
-              <!-- If the image is just decorative, use alt="" instead of descriptive text. -->
               <div class="contact-image">
                 <img
                   src="images/contact.jpg"
-                  alt="Portrait of Adri Meyer holding a camera"
+                  alt="Portrait holding a camera"
                 />
               </div>
 
@@ -77,11 +74,10 @@
               </div>
             </aside>
 
-            <!-- RIGHT: form -->
+            <!-- RIGHT -->
             <section class="contact-right reveal">
               <h2 id="contact-form-heading" class="sr-only">Contact form</h2>
 
-              <!-- Replace action URL with your Formspree endpoint -->
               <form class="contact-form" action="https://formspree.io/f/XXXXYYYY" method="POST">
                 <div class="field">
                   <label for="name">NAME</label>
@@ -110,7 +106,6 @@
                   <textarea id="message" name="message" rows="6" required></textarea>
                 </div>
 
-                <!-- Optional: email subject + accessible spam trap -->
                 <input type="hidden" name="_subject" value="New PranaPhotos Contact Form Submission" />
 
                 <div class="honeypot" aria-hidden="true">
@@ -127,7 +122,8 @@
       </main>
     </div>
 
-    <!-- Optional scroll fade. If you create this file, it will animate .reveal elements -->
+    <!-- Load once, at the end of body -->
     <script src="scroll-fade.js" defer></script>
   </body>
 </html>
+<a href="prints.html">PRINTS</a>
