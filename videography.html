@@ -7,62 +7,26 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <script src="scroll-fade.js" defer></script>
-
-<footer class="site-footer">
-  <!-- Brand logos -->
-  <div class="footer-logos">
-    <img src="images/logos/milan-fashion-week.png" alt="Milan Fashion Week logo" />
-    <img src="images/logos/red-bull.png" alt="Red Bull logo" />
-    <img src="images/logos/denver-fashion-week.png" alt="Denver Fashion Week logo" />
-    <img src="images/logos/noalya.png" alt="Noalya Chocolativo logo" />
-  </div>
-
-  <!-- Social icons -->
-  <div class="footer-social">
-    <a href="https://instagram.com/Pranaphotos_" target="_blank" rel="noopener" aria-label="Instagram">
-      <img src="images/icons/instagram.svg" alt="" />
-    </a>
-
-    <a href="https://www.linkedin.com/in/YOURPROFILE" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <img src="images/icons/linkedin.svg" alt="" />
-    </a>
-  </div>
-</footer>
-
   <body>
+    <a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
     <div class="layout">
-      <!-- SIDEBAR -->
-      <aside class="sidebar">
-        <div class="brand">
-          <div class="title">PRANAPHOTOS</div>
-          <div class="subtitle">PHOTO / VIDEO</div>
-        </div>
-
-        <nav class="nav" aria-label="Primary navigation">
-          <a href="index.html">HOME</a>
-          <a href="about.html">ABOUT</a>
-          <a href="portfolio.html">PORTFOLIO</a>
-          <a href="videography.html" aria-current="page">VIDEOGRAPHY</a>
-          <a href="contact.html">CONTACT</a>
-        </nav>
-
-        <div class="sidebar-footer">© 2026 PRANAPHOTOS</div>
-      </aside>
+      <!-- CENTRALIZED SIDEBAR MENU -->
+      <aside class="sidebar" id="site-menu" aria-label="Site sidebar"></aside>
 
       <!-- CONTENT -->
-      <main class="content" id="main">
+      <main class="content" id="main" tabindex="-1">
         <div class="content-inner">
           <section class="section">
-            <h1>VIDEOGRAPHY</h1>
-            <p>
+            <h1 class="reveal">VIDEOGRAPHY</h1>
+            <p class="reveal">
               PRANAPHOTOS OFFERS VIDEO WORK BUILT AROUND CALM, INTENTIONAL STORYTELLING.
               I FOCUS ON CLEAN COMPOSITION, NATURAL PERFORMANCE, AND RHYTHM-FIRST EDITING
               THAT FEELS GROUNDED RATHER THAN OVERPRODUCED.
             </p>
           </section>
 
-          <section class="section" aria-labelledby="approach">
+          <section class="section reveal" aria-labelledby="approach">
             <h2 id="approach">APPROACH</h2>
             <p>
               MY APPROACH IS SIMPLE: START WITH MEANING AND FEELING, THEN BUILD VISUAL
@@ -81,7 +45,7 @@
             </p>
           </section>
 
-          <section class="section" aria-labelledby="services">
+          <section class="section reveal" aria-labelledby="services">
             <h2 id="services">SERVICES &amp; DELIVERABLES</h2>
             <ul>
               <li>SHORT-FORM VIDEO (REELS / SHORTS / SOCIAL CUTDOWNS)</li>
@@ -93,7 +57,7 @@
           </section>
 
           <!-- PORTFOLIO GRID -->
-          <section class="section" aria-labelledby="work">
+          <section class="section reveal" aria-labelledby="work">
             <div class="section-head">
               <h2 id="work">WORK</h2>
               <p class="section-sub">SELECTED PROJECTS + SOCIAL CUTDOWNS.</p>
@@ -187,26 +151,16 @@
                   >WATCH ON INSTAGRAM</a>
                 </div>
               </article>
-
-              <!-- TEMPLATE CARD -->
-              <!--
-              <article class="video-card">
-                <a class="video-thumb" href="LINK_TO_VIDEO" target="_blank" rel="noopener">
-                  <img src="assets/video-thumbs/your-thumb.jpg" alt="Video thumbnail" loading="lazy" />
-                  <span class="video-play" aria-hidden="true">▶</span>
-                </a>
-                <div class="video-meta">
-                  <h3>PROJECT TITLE</h3>
-                  <p>SHORT DESCRIPTION.</p>
-                  <a class="video-link" href="LINK_TO_VIDEO" target="_blank" rel="noopener">WATCH</a>
-                </div>
-              </article>
-              -->
             </div>
           </section>
         </div>
       </main>
     </div>
+
+    <!-- REQUIRED: shared menu injection -->
+    <script src="menu-inject.js" defer></script>
+
+    <!-- OPTIONAL: scroll fade -->
+    <script src="scroll-fade.js" defer></script>
   </body>
 </html>
-<a href="prints.html">PRINTS</a>
