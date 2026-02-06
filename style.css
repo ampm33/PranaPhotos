@@ -610,3 +610,29 @@ a:hover{
 
 /* If JS fails, still show content (optional safety) */
 .no-js .reveal{ opacity: 1; transform: none; }
+/* SIDEBAR SOCIAL ICONS */
+
+.sidebar-social {
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.sidebar-social img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-social img:hover {
+  opacity: 1;
+}
+
+/* Divider line */
+.sidebar-divider {
+  margin: 32px 0 18px;
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.2);
+}
