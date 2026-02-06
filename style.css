@@ -1,6 +1,8 @@
 /* =========================================================
-   PRANAPHOTOS — Clean, mobile-first, accessible CSS
-   Keeps your current aesthetic (Times, uppercase, light UI)
+   PRANAPHOTOS — Clean, mobile-first, accessible CSS (RECoded)
+   - ALL CAPS preserved
+   - Paragraphs more defined + readable
+   - No duplicate/conflicting rules
 ========================================================= */
 
 /* ========== RESET / BASE ========== */
@@ -8,11 +10,23 @@
 *::before,
 *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; overflow-y: scroll; }
-body { margin: 0; line-height: 1.6; }
+html{
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-y: scroll;
+}
+
+body{
+  margin: 0;
+  line-height: 1.75; /* better paragraph rhythm */
+}
 
 img,
-video { max-width: 100%; height: auto; display: block; }
+video{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* ========== TOKENS ========== */
 :root{
@@ -26,27 +40,48 @@ video { max-width: 100%; height: auto; display: block; }
   --rule: #d9d9d9;
   --text: #111;
 
-  --focus: #111; /* visible on light bg */
+  --focus: #111;
 }
 
 /* ========== GLOBAL TYPE ========== */
 body{
   font-family: "Times New Roman", Times, Georgia, serif;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 14px;
+  letter-spacing: 0.07em; /* slightly tighter = more readable */
+  font-size: 15px;        /* paragraphs feel more “real” */
   color: var(--text);
   background: var(--bg);
 }
 
-h1, h2, h3{
+/* Headings: same font as paragraphs (still all caps), just stronger hierarchy */
+h1, h2, h3, h4, h5, h6{
+  font-family: inherit;
   font-weight: normal;
-  letter-spacing: 0.12em;
+  text-transform: inherit;
+  letter-spacing: 0.08em; /* closer to body */
+  line-height: 1.2;
   margin: 0 0 0.75rem 0;
 }
 
-p{ margin: 0 0 1rem 0; }
+h1{ font-size: 1.6rem; }
+h2{ font-size: 1.25rem; }
+h3{ font-size: 1.05rem; }
 
+/* Paragraphs: more defined */
+p{
+  margin: 0 0 1.15rem 0;
+  max-width: 70ch;      /* easier reading */
+  opacity: 0.92;        /* subtle “ink” feeling */
+}
+
+/* Lists: match paragraph rhythm */
+ul, ol{
+  margin: 0.25rem 0 1.15rem 1.25rem;
+  max-width: 70ch;
+}
+li{ margin: 0.4rem 0; }
+
+/* Links */
 a{
   color: inherit;
   text-decoration: none;
@@ -57,7 +92,7 @@ a:hover{
   text-underline-offset: 3px;
 }
 
-/* Visible keyboard focus (WCAG-friendly) */
+/* Focus */
 :focus-visible{
   outline: 3px solid var(--focus);
   outline-offset: 3px;
@@ -90,14 +125,12 @@ a:hover{
 }
 
 /* ========== LAYOUT (MOBILE-FIRST) ========== */
-/* Mobile default: stacked layout */
 .layout{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Sidebar becomes top header on mobile */
 .sidebar{
   width: 100%;
   padding: 32px 24px;
@@ -113,10 +146,8 @@ a:hover{
   margin: 0 0 10px 0;
 }
 
-/* keep hidden (your preference) */
 .brand .subtitle{ display: none; }
 
-/* Mobile nav: wraps horizontally */
 .nav{
   display: flex;
   flex-wrap: wrap;
@@ -129,13 +160,11 @@ a:hover{
   padding: 6px 0;
 }
 
-/* Current page indicator */
 .nav a[aria-current="page"]{
   opacity: 0.65;
   text-decoration: none;
 }
 
-/* Footer: normal flow on mobile */
 .sidebar-footer{
   margin-top: 22px;
   padding-top: 18px;
@@ -145,7 +174,6 @@ a:hover{
   opacity: 0.85;
 }
 
-/* Content */
 .content{
   flex: 1;
   padding: 32px 24px;
@@ -156,7 +184,7 @@ a:hover{
   max-width: var(--content-max);
 }
 
-.section{ margin-bottom: 48px; }
+.section{ margin-bottom: 56px; } /* slightly more breathing room */
 
 /* ========== SHARED COMPONENTS ========== */
 .btn{
@@ -166,7 +194,7 @@ a:hover{
   background: transparent;
   cursor: pointer;
   font: inherit;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.10em;
   text-transform: inherit;
 }
 
@@ -175,10 +203,10 @@ a:hover{
   text-underline-offset: 3px;
 }
 
-/* ========== PLACEHOLDERS (portfolio / videography) ========== */
+/* ========== GRID PLACEHOLDERS (portfolio / prints) ========== */
 .grid{
   display: grid;
-  grid-template-columns: 1fr; /* mobile first */
+  grid-template-columns: 1fr;
   gap: 22px;
 }
 
@@ -187,6 +215,14 @@ a:hover{
   background: rgba(255,255,255,0.6);
   border-radius: 2px;
   overflow: hidden;
+  display: block; /* clickable card support */
+}
+
+.placeholder:hover{ text-decoration: none; }
+
+.placeholder:focus-visible{
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
 }
 
 .ph-box{
@@ -206,11 +242,11 @@ a:hover{
 .ph-caption{
   padding: 14px 16px;
   font-size: 12px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.10em;
   opacity: 0.9;
 }
 
-/* ========== HOME HERO BACKGROUND (HOME PAGE ONLY) ========== */
+/* ========== HOME HERO BACKGROUND ========== */
 .home-hero{
   position: relative;
   min-height: 100vh;
@@ -241,6 +277,7 @@ a:hover{
 .home-hero p{
   color: #fff;
   text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  opacity: 1;
 }
 
 .home-hero .content-inner{
@@ -266,8 +303,6 @@ a:hover{
   padding-top: 1.25rem;
 }
 
-.contact-image img{ width: 100%; height: auto; display: block; }
-
 .contact-details{
   margin-top: 1rem;
   display: grid;
@@ -283,10 +318,8 @@ a:hover{
 
 .detail-label{
   opacity: 0.65;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.10em;
 }
-
-.detail-value{ color: inherit; }
 
 .contact-form{
   max-width: 560px;
@@ -298,7 +331,7 @@ a:hover{
   display: block;
   margin-bottom: 0.35rem;
   opacity: 0.75;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.10em;
 }
 
 .field input,
@@ -324,7 +357,6 @@ a:hover{
   opacity: 0.7;
 }
 
-/* Honeypot (spam trap) — hidden offscreen but present in DOM */
 .honeypot{
   position: absolute;
   left: -9999px;
@@ -333,7 +365,7 @@ a:hover{
   overflow: hidden;
 }
 
-/* ========== VIDEOGRAPHY PORTFOLIO GRID ========== */
+/* ========== VIDEOGRAPHY GRID (IF USING THUMBNAILS) ========== */
 .section-head{ margin-bottom: 1rem; }
 
 .section-sub{
@@ -344,200 +376,7 @@ a:hover{
 
 .video-grid{
   display: grid;
-  grid-template-columns: 1fr; /* mobile first */
-  gap: 1.5rem;
-}
-
-.video-card{
-  border-top: 1px solid rgba(0,0,0,0.18);
-  padding-top: 1.25rem;
-}
-
-.video-embed{
-  position: relative;
-  width: 100%;
-  background: #000;
-}
-
-.video-embed iframe{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.video-16x9{ padding-top: 56.25%; }
-.video-9x16{ padding-top: 177.78%; }
-
-.video-meta{
-  margin-top: 0.9rem;
-  display: grid;
-  gap: 0.35rem;
-  max-width: 70ch;
-}
-
-.video-meta h3{
-  margin: 0;
-  letter-spacing: 0.12em;
-}
-
-.video-meta p{
-  margin: 0;
-  opacity: 0.85;
-}
-
-.video-link{
-  display: inline-block;
-  margin-top: 0.35rem;
-  border-bottom: 1px solid rgba(0,0,0,0.5);
-  padding-bottom: 0.15rem;
-  width: fit-content;
-}
-
-.video-link:hover{
-  text-decoration: none;
-  opacity: 1;
-}
-
-/* ========== SCROLL FADE REVEALS ========== */
-.reveal{
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 700ms ease, transform 700ms ease;
-}
-
-.reveal.is-visible{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce){
-  .reveal{
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
-/* ========== RESPONSIVE UPGRADES (DESKTOP/TABLET) ========== */
-@media (min-width: 720px){
-  .content{ padding: var(--page-pad-y) var(--page-pad-x); }
-  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (min-width: 900px){
-  .layout{
-    flex-direction: row;
-  }
-
-  .sidebar{
-    width: var(--sidebar-w);
-    flex: 0 0 var(--sidebar-w);
-    padding: 48px 32px 32px;
-    border-right: 1px solid var(--rule);
-    border-bottom: none;
-
-    position: sticky;
-    top: 0;
-    height: 100vh;
-  }
-
-  .nav{
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 22px;
-    margin-top: 18px;
-  }
-
-  .sidebar-footer{
-    position: absolute;
-    left: 32px;
-    right: 32px;
-    bottom: 24px;
-    margin-top: 0;
-  }
-
-  /* Contact desktop: 2 columns */
-  .contact-grid{
-    flex-direction: row;
-    gap: 2.5rem;
-    align-items: start;
-  }
-
-  .contact-left{
-    flex: 1;
-    max-width: 420px;
-  }
-
-  .contact-right{ flex: 1; }
-
-  .contact-left,
-  .contact-right{
-    border-top: none;
-    padding-top: 0;
-  }
-
-  /* Videography desktop: 2 columns */
-  .video-grid{
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-}
-
-/* iOS/Safari: fixed backgrounds can be janky on small screens */
-@media (max-width: 720px){
-  .home-hero::before,
-  .home-hero::after{
-    position: absolute;
-  }
-}
-.placeholder {
-  display: block; /* makes the whole card clickable */
-}
-
-.placeholder:hover {
-  text-decoration: none;
-}
-
-.placeholder:focus-visible {
-  outline: 3px solid currentColor;
-  outline-offset: 4px;
-}
-.prints-intro {
-  max-width: 520px;
-  margin-top: 1.5rem;
-  line-height: 1.6;
-}
-
-.prints-button {
-  display: inline-block;
-  margin-top: 2.5rem;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid black;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  transition: background 0.2s ease;
-}
-
-.prints-button:hover {
-  background: black;
-  color: white;
-}
-/* =========================================================
-   CLEAN OVERRIDES — keep at bottom of style.css
-   (Fixes: video thumbnails, duplicate rules, footer logo sizing)
-========================================================= */
-
-/* -----------------------------
-   VIDEOGRAPHY GRID (UNIFORM TILES)
-   Use this if you are using thumbnail cards (.video-thumb img)
------------------------------- */
-
-.video-grid{
-  display: grid;
-  grid-template-columns: 1fr; /* mobile first */
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 1.25rem;
 }
@@ -570,14 +409,11 @@ a:hover{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   transform: scale(1);
   transition: transform 180ms ease;
 }
 
-.video-thumb:hover img{
-  transform: scale(1.03);
-}
+.video-thumb:hover img{ transform: scale(1.03); }
 
 .video-play{
   position: absolute;
@@ -622,7 +458,6 @@ a:hover{
 
 .video-meta p{
   margin: 0 0 0.85rem;
-  line-height: 1.55;
   opacity: 0.85;
 }
 
@@ -634,7 +469,6 @@ a:hover{
   letter-spacing: 0.08em;
   font-size: 0.75rem;
   width: fit-content;
-  text-decoration: none;
 }
 
 .video-link:hover{
@@ -642,11 +476,7 @@ a:hover{
   text-underline-offset: 3px;
 }
 
-/* -----------------------------
-   SCROLL REVEAL (ONE SYSTEM ONLY)
-   You are using .reveal in your HTML
------------------------------- */
-
+/* ========== SCROLL REVEAL ========== */
 .reveal{
   opacity: 0;
   transform: translateY(14px);
@@ -666,10 +496,7 @@ a:hover{
   }
 }
 
-/* -----------------------------
-   FOOTER (match your current HTML)
------------------------------- */
-
+/* ========== FOOTER ========== */
 .site-footer{
   margin-top: 96px;
   padding: 28px 40px;
@@ -686,7 +513,6 @@ a:hover{
   gap: 44px;
 }
 
-/* your HTML uses .footer-logos img (no .logo class) */
 .footer-logos img{
   height: 26px;
   width: auto;
@@ -720,3 +546,67 @@ a:hover{
   }
   .footer-logos{ gap: 28px; }
 }
+
+/* ========== RESPONSIVE UPGRADES (DESKTOP) ========== */
+@media (min-width: 720px){
+  .content{ padding: var(--page-pad-y) var(--page-pad-x); }
+  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 900px){
+  .layout{ flex-direction: row; }
+
+  .sidebar{
+    width: var(--sidebar-w);
+    flex: 0 0 var(--sidebar-w);
+    padding: 48px 32px 32px;
+    border-right: 1px solid var(--rule);
+    border-bottom: none;
+
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  .nav{
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 22px;
+    margin-top: 18px;
+  }
+
+  .sidebar-footer{
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    bottom: 24px;
+    margin-top: 0;
+  }
+
+  .contact-grid{
+    flex-direction: row;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .contact-left{
+    flex: 1;
+    max-width: 420px;
+  }
+
+  .contact-right{ flex: 1; }
+  .contact-left,
+  .contact-right{
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+/* iOS/Safari: fixed backgrounds can be janky on small screens */
+@media (max-width: 720px){
+  .home-hero::before,
+  .home-hero::after{ position: absolute; }
+}
+
+/* If JS fails, still show content (optional safety) */
+.no-js .reveal{ opacity: 1; transform: none; }
