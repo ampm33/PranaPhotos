@@ -1,63 +1,59 @@
-menu.js
-// 1. Grab the button that opens the menu
-const menuBtn = document.getElementById("menuBtn");
+// ===== Shared menu injection + your existing open/close logic =====
 
-// 2. Grab the dark background behind the menu
-const backdrop = document.getElementById("backdrop");
+document.addEventListener("DOMContentLoaded", async () => {
+  // ---------- 1) Inject menu.html into #site-menu ----------
+  const mount = document.getElementById("site-menu");
 
-// 3. Function that opens or closes the menu
-function setMenu(open) {
-  // Adds or removes the "menu-open" class on <body>
-  document.body.classList.toggle("menu-open", open);
+  if (mount) {
+    try {
+      const res = await fetch("menu.html", { cache: "no-store" });
+      if (!res.ok) throw new Error(`Failed to load menu.html: ${res.status}`);
 
-  // Update accessibility state
+      mount.innerHTML = await res.text();
+
+      // Highlight current page
+      const current = window.location.pathname.split("/").pop() || "index.html";
+      const links = mount.querySelectorAll("a.nav__link");
+
+      links.forEach((a) => {
+        const href = a.getAttribute("href");
+        if (href === current) a.setAttribute("aria-current", "page");
+      });
+    } catch (err) {
+      console.error(err);
+      // If menu fails to load, at least show something
+      mount.innerHTML = `<a class="brand__link" href="index.html">PRANAPHOTOS</a>`;
+    }
+  }
+
+  // ---------- 2) Your existing menu open/close behavior ----------
+  const menuBtn = document.getElementById("menuBtn");
+  const backdrop = document.getElementById("backdrop");
+
+  function setMenu(open) {
+    document.body.classList.toggle("menu-open", open);
+
+    if (menuBtn) {
+      menuBtn.setAttribute("aria-expanded", String(open));
+    }
+
+    if (backdrop) {
+      backdrop.hidden = !open;
+    }
+  }
+
   if (menuBtn) {
-    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.addEventListener("click", () => {
+      const isOpen = document.body.classList.contains("menu-open");
+      setMenu(!isOpen);
+    });
   }
 
-  // Show or hide the dark background
   if (backdrop) {
-    backdrop.hidden = !open;
+    backdrop.addEventListener("click", () => setMenu(false));
   }
-}
 
-// 4. When the menu button is clicked
-if (menuBtn) {
-  menuBtn.addEventListener("click", () => {
-    const isOpen = document.body.classList.contains("menu-open");
-    setMenu(!isOpen);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setMenu(false);
   });
-}
-
-// 5. Clicking the dark background closes the menu
-if (backdrop) {
-  backdrop.addEventListener("click", () => {
-    setMenu(false);
-  });
-}
-
-// 6. Pressing ESC closes the menu
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    setMenu(false);
-  }
 });
-<body>
-  <aside class="sidebar">
-    <a class="brand__link" href="index.html">PRANAPHOTOS</a>
-  
-
-    <nav class="nav">
-      <a class="nav__link" href="index.html">HOME</a>
-      <a class="nav__link" href="about.html">ABOUT</a>
-      <a class="nav__link" href="portfolio.html">PORTFOLIO</a>
-      <a class="nav__link" href="videography.html">VIDEOGRAPHY</a>
-      <a class="nav__link" href="contact.html">CONTACT</a>
-    </nav>
-
-    <div class="sidebar__footer">© PRANAPHOTOS</div>
-  </aside>
-
-  <main class="content">
-  </main>
-</body>
