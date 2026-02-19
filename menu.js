@@ -1,59 +1,27 @@
-// ===== Shared menu injection + your existing open/close logic =====
+<div class="brand">
+  <div class="title" aria-label="PranaPhotos">PRANAPHOTOS</div>
+  <div class="subtitle">PHOTO / VIDEO</div>
+</div>
 
-document.addEventListener("DOMContentLoaded", async () => {
-  // ---------- 1) Inject menu.html into #site-menu ----------
-  const mount = document.getElementById("site-menu");
+<nav class="nav" aria-label="Primary navigation">
+  <a href="index.html">HOME</a>
+  <a href="about.html">ABOUT</a>
+  <a href="portfolio.html">PORTFOLIO</a>
+  <a href="videography.html">VIDEOGRAPHY</a>
+  <a href="prints.html">PRINTS</a>
+  <a href="contact.html">CONTACT</a>
+</nav>
 
-  if (mount) {
-    try {
-      const res = await fetch("menu.html", { cache: "no-store" });
-      if (!res.ok) throw new Error(`Failed to load menu.html: ${res.status}`);
+<!-- SOCIAL ICONS (ABOVE THE LINE) -->
+<div class="sidebar-social" aria-label="Social links">
+  <a href="https://instagram.com/Pranaphotos_" target="_blank" rel="noopener" aria-label="Instagram">
+    <img src="images/icons/instagram.svg" alt="" />
+  </a>
+  <a href="https://www.linkedin.com/in/YOURPROFILE" target="_blank" rel="noopener" aria-label="LinkedIn">
+    <img src="images/icons/linkedin.svg" alt="" />
+  </a>
+</div>
 
-      mount.innerHTML = await res.text();
+<hr class="sidebar-divider" />
 
-      // Highlight current page
-      const current = window.location.pathname.split("/").pop() || "index.html";
-      const links = mount.querySelectorAll("a.nav__link");
-
-      links.forEach((a) => {
-        const href = a.getAttribute("href");
-        if (href === current) a.setAttribute("aria-current", "page");
-      });
-    } catch (err) {
-      console.error(err);
-      // If menu fails to load, at least show something
-      mount.innerHTML = `<a class="brand__link" href="index.html">PRANAPHOTOS</a>`;
-    }
-  }
-
-  // ---------- 2) Your existing menu open/close behavior ----------
-  const menuBtn = document.getElementById("menuBtn");
-  const backdrop = document.getElementById("backdrop");
-
-  function setMenu(open) {
-    document.body.classList.toggle("menu-open", open);
-
-    if (menuBtn) {
-      menuBtn.setAttribute("aria-expanded", String(open));
-    }
-
-    if (backdrop) {
-      backdrop.hidden = !open;
-    }
-  }
-
-  if (menuBtn) {
-    menuBtn.addEventListener("click", () => {
-      const isOpen = document.body.classList.contains("menu-open");
-      setMenu(!isOpen);
-    });
-  }
-
-  if (backdrop) {
-    backdrop.addEventListener("click", () => setMenu(false));
-  }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") setMenu(false);
-  });
-});
+<div class="sidebar-footer">© 2026 PRANAPHOTOS</div>

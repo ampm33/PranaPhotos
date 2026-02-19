@@ -7,55 +7,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <script src="scroll-fade.js" defer></script>
-<footer class="site-footer">
-  <!-- Brand logos -->
-  <div class="footer-logos">
-    <img src="images/logos/milan-fashion-week.png" alt="Milan Fashion Week logo" />
-    <img src="images/logos/red-bull.png" alt="Red Bull logo" />
-    <img src="images/logos/denver-fashion-week.png" alt="Denver Fashion Week logo" />
-    <img src="images/logos/noalya.png" alt="Noalya Chocolativo logo" />
-  </div>
-
-  <!-- Social icons -->
-  <div class="footer-social">
-    <a href="https://instagram.com/Pranaphotos_" target="_blank" rel="noopener" aria-label="Instagram">
-      <img src="images/icons/instagram.svg" alt="" />
-    </a>
-
-    <a href="https://www.linkedin.com/in/YOURPROFILE" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <img src="images/icons/linkedin.svg" alt="" />
-    </a>
-  </div>
-</footer>
-
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">SKIP TO CONTENT</a>
 
     <div class="layout">
-      <aside class="sidebar">
-        <div class="brand">
-          <div class="title">PRANAPHOTOS</div>
-          <div class="subtitle">PHOTO / VIDEO</div>
-        </div>
+      <!-- CENTRALIZED SIDEBAR MENU -->
+      <aside class="sidebar" id="site-menu" aria-label="Site sidebar"></aside>
 
-        <nav class="nav" aria-label="Primary navigation">
-          <a href="index.html">HOME</a>
-          <a href="about.html">ABOUT</a>
-          <a href="portfolio.html" aria-current="page">PORTFOLIO</a>
-          <a href="videography.html">VIDEOGRAPHY</a>
-          <a href="contact.html">CONTACT</a>
-        </nav>
-
-        <div class="sidebar-footer">© 2026 PRANAPHOTOS</div>
-      </aside>
-
-      <main class="content" id="main">
+      <main class="content" id="main" tabindex="-1">
         <div class="content-inner">
           <!-- TITLE / INTRO -->
           <section class="section">
-            <h1>PORTFOLIO</h1>
-            <p>
+            <h1 class="reveal">PORTFOLIO</h1>
+            <p class="reveal">
               THIS PORTFOLIO IS ORGANIZED BY CATEGORY SO VISITORS CAN QUICKLY UNDERSTAND
               THE TYPE OF WORK I MAKE. EACH SECTION CAN BE EXPANDED INTO FULL GALLERIES
               OR PROJECT PAGES.
@@ -63,7 +27,7 @@
           </section>
 
           <!-- CATEGORIES -->
-          <section class="section" aria-labelledby="categories">
+          <section class="section reveal" aria-labelledby="categories">
             <h2 id="categories">CATEGORIES</h2>
 
             <div class="grid" aria-label="Portfolio categories">
@@ -88,14 +52,3 @@
               </a>
 
               <a class="placeholder" href="fashion.html" aria-label="Open portfolio category: Fashion">
-                <div class="ph-box"><span>FASHION</span></div>
-                <div class="ph-caption">FASHION</div>
-              </a>
-            </div>
-          </section>
-        </div>
-      </main>
-    </div>
-  </body>
-</html>
-<a href="prints.html">PRINTS</a>

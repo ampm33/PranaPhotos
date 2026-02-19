@@ -496,57 +496,6 @@ a:hover{
   }
 }
 
-/* ========== FOOTER ========== */
-.site-footer{
-  margin-top: 96px;
-  padding: 28px 40px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 28px;
-}
-
-.footer-logos{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 44px;
-}
-
-.footer-logos img{
-  height: 26px;
-  width: auto;
-  opacity: 0.65;
-  filter: grayscale(100%);
-}
-
-.footer-social{
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-
-.footer-social img{
-  width: 18px;
-  height: 18px;
-  opacity: 0.7;
-  filter: none;
-}
-
-.footer-social a:hover img,
-.footer-logos img:hover{
-  opacity: 1;
-}
-
-@media (max-width: 768px){
-  .site-footer{
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 24px 20px;
-  }
-  .footer-logos{ gap: 28px; }
-}
-
 /* ========== RESPONSIVE UPGRADES (DESKTOP) ========== */
 @media (min-width: 720px){
   .content{ padding: var(--page-pad-y) var(--page-pad-x); }
@@ -610,29 +559,52 @@ a:hover{
 
 /* If JS fails, still show content (optional safety) */
 .no-js .reveal{ opacity: 1; transform: none; }
-/* SIDEBAR SOCIAL ICONS */
 
-.sidebar-social {
-  margin-top: 40px;
+/* =========================================================
+   SIDEBAR: SOCIAL + DIVIDER (FOR INJECTED menu.html)
+   Puts icons right above the line above © 2026
+========================================================= */
+
+.sidebar-social{
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: center;
 }
 
-.sidebar-social img {
+.sidebar-social img{
   width: 18px;
   height: 18px;
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
+  opacity: 0.7;
+  transition: opacity 160ms ease;
 }
 
-.sidebar-social img:hover {
+.sidebar-social a:hover img{
   opacity: 1;
 }
 
-/* Divider line */
-.sidebar-divider {
-  margin: 32px 0 18px;
-  border: none;
-  border-top: 1px solid rgba(0,0,0,0.2);
+.sidebar-divider{
+  margin: 18px 0 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+@media (min-width: 900px){
+  .sidebar-social{
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    bottom: 66px;
+    margin-top: 0;
+  }
+
+  .sidebar-divider{
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    bottom: 52px;
+    margin: 0;
+  }
 }

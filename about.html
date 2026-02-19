@@ -5,69 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ABOUT | PRANAPHOTOS</title>
     <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  
-<script src="scroll-fade.js" defer></script>
-
-<footer class="site-footer">
-  <!-- Brand logos -->
-  <div class="footer-logos">
-    <img src="images/logos/milan-fashion-week.png" alt="Milan Fashion Week logo" />
-    <img src="images/logos/red-bull.png" alt="Red Bull logo" />
-    <img src="images/logos/denver-fashion-week.png" alt="Denver Fashion Week logo" />
-    <img src="images/logos/noalya.png" alt="Noalya Chocolativo logo" />
-  </div>
-
-  <!-- Social icons -->
-  <div class="footer-social">
-    <a href="https://instagram.com/Pranaphotos_" target="_blank" rel="noopener" aria-label="Instagram">
-      <img src="images/icons/instagram.svg" alt="" />
-    </a>
-
-    <a href="https://www.linkedin.com/in/YOURPROFILE" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <img src="images/icons/linkedin.svg" alt="" />
-    </a>
-  </div>
-</footer>
 
   <body>
+    <a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
     <div class="layout">
-      <aside class="sidebar">
-        <div class="brand">
-          <div class="title">PRANAPHOTOS</div>
-          <div class="subtitle">PHOTO / VIDEO</div>
-        </div>
+      <!-- CENTRALIZED SIDEBAR MENU -->
+      <aside class="sidebar" id="site-menu" aria-label="Site sidebar"></aside>
 
-        <nav class="nav" aria-label="Primary navigation">
-          <a href="index.html">HOME</a>
-          <a href="about.html" aria-current="page">ABOUT</a>
-          <a href="portfolio.html">PORTFOLIO</a>
-          <a href="videography.html">VIDEOGRAPHY</a>
-          <a href="contact.html">CONTACT</a>
-        </nav>
-
-        <div class="sidebar-footer">© 2026 PRANAPHOTOS</div>
-      </aside>
-
-      <main class="content" id="main">
+      <main class="content" id="main" tabindex="-1">
         <div class="content-inner">
           <section class="section">
-            <h1>ABOUT</h1>
+            <h1 class="reveal">ABOUT</h1>
           </section>
 
-          <section class="section" aria-labelledby="bio">
+          <section class="section reveal" aria-labelledby="bio">
             <h2 id="bio">BIO</h2>
+
             <p>
               HELLO! I AM A CREATIVE SPECIALIZING IN PHOTOGRAPHY, WITH OVER 5 YEARS OF
               PROFESSIONAL EXPERIENCE. I FOCUS ON MAKING IMAGES THAT FEEL GROUNDED,
               INTENTIONAL, AND EMOTIONALLY HONEST.
             </p>
+
             <p>
               I AM INVESTED IN CREATING MULTIPURPOSE APPLICATIONS FOR PHOTO AND VIDEO ACROSS
               SHORT- AND LONG-FORM STORYTELLING, AND IN BUILDING VISUAL AND BRAND IDENTITY
               THROUGH COHESIVE EXPERIENTIAL NARRATIVES.
             </p>
+
             <p>
               I AM TAKING THIS CLASS TO STRENGTHEN MY TECHNOLOGIC AND AESTHETIC SKILLS,
               WHILE ALSO CONTINUING TO BUILD MY FOUNDATION IN CREATIVE AND BUSINESS
@@ -75,7 +42,7 @@
             </p>
           </section>
 
-          <section class="section" aria-labelledby="values">
+          <section class="section reveal" aria-labelledby="values">
             <h2 id="values">WHAT I VALUE</h2>
             <ul>
               <li>CONSISTENCY IN VISUAL TONE AND BRAND IDENTITY</li>
@@ -83,9 +50,44 @@
               <li>CLEAN STRUCTURE AND INTENTIONAL CREATIVE DECISIONS</li>
             </ul>
           </section>
+
+          <!-- FOOTER (ONLY ON PAGES YOU WANT IT) -->
+          <footer class="site-footer">
+            <div class="footer-logos" aria-label="Brand partnerships">
+              <img src="images/logos/milan-fashion-week.png" alt="Milan Fashion Week logo" />
+              <img src="images/logos/red-bull.png" alt="Red Bull logo" />
+              <img src="images/logos/denver-fashion-week.png" alt="Denver Fashion Week logo" />
+              <img src="images/logos/noalya.png" alt="Noalya Chocolativo logo" />
+            </div>
+
+            <div class="footer-social" aria-label="Social links">
+              <a
+                href="https://instagram.com/Pranaphotos_"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <img src="images/icons/instagram.svg" alt="" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/YOURPROFILE"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <img src="images/icons/linkedin.svg" alt="" />
+              </a>
+            </div>
+          </footer>
         </div>
       </main>
     </div>
+
+    <!-- LOAD SHARED MENU -->
+    <script src="menu-inject.js" defer></script>
+
+    <!-- SCROLL FADE -->
+    <script src="scroll-fade.js" defer></script>
   </body>
 </html>
-<a href="prints.html">PRINTS</a>
