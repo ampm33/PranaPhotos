@@ -186,6 +186,22 @@ a:hover{
 
 .section{ margin-bottom: 56px; } /* slightly more breathing room */
 
+/* ========== ABOUT PAGE: PROFILE PHOTO (LAB 7.2) ========== */
+.about-photo{
+  width: min(420px, 100%);
+  margin: 18px 0 0;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+
+  /* default black & white */
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+/* JS toggles this class on hover */
+.about-photo.is-color{
+  filter: grayscale(0%);
+}
 /* ========== SHARED COMPONENTS ========== */
 .btn{
   display: inline-block;
