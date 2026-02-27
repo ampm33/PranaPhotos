@@ -1,91 +1,81 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HOME | PRANAPHOTOS</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HOME | PRANAPHOTOS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <body>
-    <a class="skip-link" href="#main">SKIP TO CONTENT</a>
+<body class="page">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="layout">
-      <!-- SIDEBAR -->
-      <aside class="sidebar" aria-label="Site sidebar">
-        <div class="brand">
-          <div class="title">PRANAPHOTOS</div>
-          <div class="subtitle">PHOTO / VIDEO</div>
-        </div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PranaPhotos Home">PRANAPHOTOS</a>
 
-        <nav class="nav" aria-label="Primary navigation">
-          <a href="index.html" aria-current="page">HOME</a>
-          <a href="about.html">ABOUT</a>
-          <a href="portfolio.html">PORTFOLIO</a>
-          <a href="videography.html">VIDEOGRAPHY</a>
-          <a href="prints.html">PRINTS</a>
-          <a href="contact.html">CONTACT</a>
-        </nav>
-
-        <div class="sidebar-footer">© 2026 PRANAPHOTOS</div>
-      </aside>
-
-      <!-- CONTENT -->
-      <main class="content" id="main" tabindex="-1">
-        <section class="home-hero" aria-labelledby="welcome">
-          <div class="content-inner">
-            <h1 id="welcome" class="reveal">WELCOME</h1>
-
-            <p class="reveal">
-              PRANAPHOTOS IS A CREATIVE STUDIO LED BY ADRI MEYER, BUILT AROUND CALM,
-              INTENTIONAL VISUAL STORYTELLING.
-            </p>
-
-            <p class="reveal">
-              THIS WEBSITE IS A MULTI-PAGE PROJECT FOCUSED ON STRUCTURE, NAVIGATION,
-              AND MEANING-FIRST HTML.
-            </p>
-
-            <p class="reveal">
-              AS THE SITE GROWS, THESE PAGES WILL BECOME A HOME FOR PHOTO AND VIDEO
-              WORK, CREATIVE DIRECTION, AND BRAND IDENTITY PROJECTS.
-            </p>
-          </div>
-        </section>
-
-        <!-- Footer (ONLY on pages you want it) -->
-        <footer class="site-footer">
-          <div class="footer-logos" aria-label="Brand partnerships">
-            <img src="images/logos/milan-fashion-week.png" alt="Milan Fashion Week logo" />
-            <img src="images/logos/red-bull.png" alt="Red Bull logo" />
-            <img src="images/logos/denver-fashion-week.png" alt="Denver Fashion Week logo" />
-            <img src="images/logos/noalya.png" alt="Noalya Chocolativo logo" />
-          </div>
-
-          <div class="footer-social" aria-label="Social links">
-            <a
-              href="https://instagram.com/Pranaphotos_"
-              target="_blank"
-              rel="noopener"
-              aria-label="Instagram"
-            >
-              <img src="images/icons/instagram.svg" alt="" />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/YOURPROFILE"
-              target="_blank"
-              rel="noopener"
-              aria-label="LinkedIn"
-            >
-              <img src="images/icons/linkedin.svg" alt="" />
-            </a>
-          </div>
-        </footer>
-      </main>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="videography.html">Videography</a>
+        <a href="prints.html">Prints</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Load once, at the end of body -->
-    <script src="scroll-fade.js" defer></script>
-  </body>
+  <!-- MAIN -->
+  <main id="main">
+    <section class="home-hero">
+      <h1>WELCOME</h1>
+
+      <a class="down" href="#next" aria-label="Scroll down">
+        <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 2L11 10L20 2" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- just a target so the chevron works -->
+    <div id="next" class="rule"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand-mini">PRANAPHOTOS</div>
+        <div class="copy">© 2026 PRANAPHOTOS</div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="videography.html">Videography</a>
+        <a href="prints.html">Prints</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="footer-icons" aria-label="Social links">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="#111" stroke-width="1.6"/>
+            <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#111" stroke-width="1.6"/>
+            <path d="M17.5 6.5h.01" stroke="#111" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </a>
+
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.5 9.5V18" stroke="#111" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M6.5 6.5h.01" stroke="#111" stroke-width="2.8" stroke-linecap="round"/>
+            <path d="M10.5 18v-5.2c0-2 1.2-3.3 3-3.3s3 1.3 3 3.3V18" stroke="#111" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M10.5 12.2v-2.7" stroke="#111" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
 </html>
