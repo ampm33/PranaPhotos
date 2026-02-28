@@ -20,6 +20,15 @@
   --nav-track:0.18em;
 }
 
+/* =========================================
+   FONT SYSTEM
+========================================= */
+
+:root {
+  --font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Times New Roman", Times, serif;
+}
+
 /* ---- reset ---- */
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
@@ -509,4 +518,57 @@ a:hover{ text-decoration:underline; }
   .contact-subtitle {
     margin-bottom: 38px;
   }
+}
+
+/* Editorial body copy */
+
+p,
+.project-description,
+.contact-subtitle,
+.portfolio-description,
+main li {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+.project-title,
+h2.work-title,
+.card h3 {
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+h1,
+.contact-title {
+  font-family: var(--font-ui);
+}
+
+/* =========================================
+   Juxtapose Interactive Section
+========================================= */
+
+.edit-comparison {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.comparison-title {
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.comparison-intro {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+.juxtapose-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
 }
