@@ -1,4 +1,4 @@
-// scroll-fade.js
+// scroll-fade.js — Intersection Observer reveal
 document.addEventListener("DOMContentLoaded", () => {
   const els = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window) || els.length === 0) return;
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
   );
 
   els.forEach((el) => io.observe(el));

@@ -1,129 +1,135 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CONTACT | PRANAPHOTOS</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CONTACT | PRANAPHOTOS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <body>
-    <a class="skip-link" href="#main">SKIP TO CONTENT</a>
+<body>
+  <a class="skip-link" href="#main">SKIP TO CONTENT</a>
 
-    <div class="layout">
-      <aside class="sidebar">
-        <div class="brand">
-          <div class="title" aria-label="PranaPhotos">PRANAPHOTOS</div>
-          <div class="subtitle">PHOTO / VIDEO</div>
-        </div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PranaPhotos Home">PRANAPHOTOS</a>
 
-        <nav class="nav" aria-label="Primary navigation">
-          <a href="index.html">HOME</a>
-          <a href="about.html">ABOUT</a>
-          <a href="portfolio.html">PORTFOLIO</a>
-          <a href="videography.html">VIDEOGRAPHY</a>
-          <a href="contact.html" aria-current="page">CONTACT</a>
-        </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-        <div class="sidebar-footer">© 2026 PRANAPHOTOS</div>
-      </aside>
-
-      <main class="content" id="main" tabindex="-1">
-        <div class="content-inner">
-          <header class="section contact-hero reveal">
-            <h1>CONTACT</h1>
-            <p class="contact-sub">
-              BOOKINGS, BRAND WORK, EDITORIAL, EVENTS — SEND A NOTE AND I’LL GET BACK SOON.
-            </p>
-          </header>
-
-          <section class="section contact-grid" aria-labelledby="contact-form-heading">
-            <!-- LEFT -->
-            <aside class="contact-left reveal">
-              <div class="contact-image">
-                <img
-                  src="images/contact.jpg"
-                  alt="Portrait holding a camera"
-                />
-              </div>
-
-              <div class="contact-details">
-                <div class="detail-row">
-                  <span class="detail-label">EMAIL</span>
-                  <a class="detail-value" href="mailto:Pranaleyadri@gmail.com">
-                    PRANALEYADRI@GMAIL.COM
-                  </a>
-                </div>
-
-                <div class="detail-row">
-                  <span class="detail-label">INSTAGRAM</span>
-                  <a
-                    class="detail-value"
-                    href="https://instagram.com/Pranaphotos_"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    @PRANAPHOTOS_
-                  </a>
-                </div>
-
-                <div class="detail-row">
-                  <span class="detail-label">LOCATION</span>
-                  <span class="detail-value">DENVER, CO</span>
-                </div>
-              </div>
-            </aside>
-
-            <!-- RIGHT -->
-            <section class="contact-right reveal">
-              <h2 id="contact-form-heading" class="sr-only">Contact form</h2>
-
-              <form class="contact-form" action="https://formspree.io/f/XXXXYYYY" method="POST">
-                <div class="field">
-                  <label for="name">NAME</label>
-                  <input id="name" name="name" type="text" autocomplete="name" required />
-                </div>
-
-                <div class="field">
-                  <label for="email">EMAIL</label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
-                    inputmode="email"
-                    required
-                  />
-                </div>
-
-                <div class="field">
-                  <label for="subject">SUBJECT</label>
-                  <input id="subject" name="subject" type="text" required />
-                </div>
-
-                <div class="field">
-                  <label for="message">MESSAGE</label>
-                  <textarea id="message" name="message" rows="6" required></textarea>
-                </div>
-
-                <input type="hidden" name="_subject" value="New PranaPhotos Contact Form Submission" />
-
-                <div class="honeypot" aria-hidden="true">
-                  <label for="website">WEBSITE</label>
-                  <input id="website" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
-                </div>
-
-                <button class="btn" type="submit">SEND</button>
-                <p class="form-note">IF THE FORM FAILS, EMAIL ME DIRECTLY.</p>
-              </form>
-            </section>
-          </section>
-        </div>
-      </main>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="videography.html">Videography</a>
+        <a href="prints.html">Prints</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Load once, at the end of body -->
-    <script src="scroll-fade.js" defer></script>
-  </body>
+  <!-- MAIN -->
+  <main id="main">
+    <div class="container">
+      <!-- HERO -->
+      <section class="contact-hero">
+        <h1 class="reveal">GET IN TOUCH</h1>
+        <p class="sub reveal">FOR INQUIRIES, BOOKINGS, OR JUST TO SAY HELLO.</p>
+      </section>
+
+      <!-- FORM -->
+      <section class="contact-form-section reveal" aria-labelledby="contact-form-heading">
+        <h2 id="contact-form-heading" class="sr-only">Contact form</h2>
+
+        <form action="https://formspree.io/f/XXXXYYYY" method="POST">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">NAME</label>
+              <input id="name" name="name" type="text" placeholder="YOUR NAME" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="email">EMAIL</label>
+              <input id="email" name="email" type="email" placeholder="YOUR@EMAIL.COM" autocomplete="email" inputmode="email" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="subject">SUBJECT</label>
+            <input id="subject" name="subject" type="text" placeholder="PROJECT INQUIRY" required />
+          </div>
+
+          <div class="field">
+            <label for="message">MESSAGE</label>
+            <textarea id="message" name="message" rows="5" placeholder="TELL ME ABOUT YOUR VISION..." required></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="New PranaPhotos Contact Form Submission" />
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">WEBSITE</label>
+            <input id="website" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="form-submit">
+            <button class="btn-send" type="submit">SEND MESSAGE</button>
+            <p class="form-note">IF THE FORM FAILS, EMAIL ME DIRECTLY AT PRANALEYADRI@GMAIL.COM</p>
+          </div>
+        </form>
+      </section>
+
+      <!-- GALLERY STRIP -->
+      <section class="gallery-strip reveal">
+        <div class="gallery-strip-grid">
+          <div class="strip-img"></div>
+          <div class="strip-img"></div>
+          <div class="strip-img"></div>
+          <div class="strip-img"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand-mini">PRANAPHOTOS</div>
+        <div class="copy">&copy; 2026 PRANAPHOTOS</div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="videography.html">Videography</a>
+        <a href="prints.html">Prints</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="footer-icons" aria-label="Social links">
+        <a href="https://instagram.com/Pranaphotos_" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="#1a1a1a" stroke-width="1.6"/>
+            <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#1a1a1a" stroke-width="1.6"/>
+            <path d="M17.5 6.5h.01" stroke="#1a1a1a" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/YOURPROFILE" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.5 9.5V18" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M6.5 6.5h.01" stroke="#1a1a1a" stroke-width="2.8" stroke-linecap="round"/>
+            <path d="M10.5 18v-5.2c0-2 1.2-3.3 3-3.3s3 1.3 3 3.3V18" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M10.5 12.2v-2.7" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scroll-fade.js" defer></script>
+</body>
 </html>
-<a href="prints.html">PRINTS</a>

@@ -1,16 +1,34 @@
-// Select the about image
-const aboutPhoto = document.querySelector('.about-photo');
+// script.js — PranaPhotos interactions
 
-// Only run if the image exists (prevents errors on other pages)
+// About photo: B&W → color on hover
+const aboutPhoto = document.querySelector('.about-photo');
 if (aboutPhoto) {
-  // Mouse enters → turn color
   aboutPhoto.addEventListener('mouseenter', () => {
     aboutPhoto.classList.add('is-color');
   });
-
-  // Mouse leaves → back to black & white
   aboutPhoto.addEventListener('mouseleave', () => {
     aboutPhoto.classList.remove('is-color');
   });
 }
-<script src="script.js"></script>
+
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.site-header .nav');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('is-open');
+    });
+
+    // Close menu when a link is clicked
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+});

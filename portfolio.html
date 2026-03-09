@@ -1,54 +1,115 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PORTFOLIO | PRANAPHOTOS</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PORTFOLIO | PRANAPHOTOS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <body>
-    <a class="skip-link" href="#main">SKIP TO CONTENT</a>
+<body>
+  <a class="skip-link" href="#main">SKIP TO CONTENT</a>
 
-    <div class="layout">
-      <!-- CENTRALIZED SIDEBAR MENU -->
-      <aside class="sidebar" id="site-menu" aria-label="Site sidebar"></aside>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PranaPhotos Home">PRANAPHOTOS</a>
 
-      <main class="content" id="main" tabindex="-1">
-        <div class="content-inner">
-          <!-- TITLE / INTRO -->
-          <section class="section">
-            <h1 class="reveal">PORTFOLIO</h1>
-            <p class="reveal">
-              THIS PORTFOLIO IS ORGANIZED BY CATEGORY SO VISITORS CAN QUICKLY UNDERSTAND
-              THE TYPE OF WORK I MAKE. EACH SECTION CAN BE EXPANDED INTO FULL GALLERIES
-              OR PROJECT PAGES.
-            </p>
-          </section>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-          <!-- CATEGORIES -->
-          <section class="section reveal" aria-labelledby="categories">
-            <h2 id="categories">CATEGORIES</h2>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="about.html">About</a>
+        <a href="portfolio.html" aria-current="page">Portfolio</a>
+        <a href="videography.html">Videography</a>
+        <a href="prints.html">Prints</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-            <div class="grid" aria-label="Portfolio categories">
-              <a class="placeholder" href="brand.html" aria-label="Open portfolio category: Brand">
-                <div class="ph-box"><span>BRAND</span></div>
-                <div class="ph-caption">BRAND</div>
-              </a>
+  <!-- MAIN -->
+  <main id="main">
+    <div class="container">
+      <!-- HERO -->
+      <section class="portfolio-hero">
+        <h1 class="reveal">PORTFOLIO</h1>
+      </section>
 
-              <a class="placeholder" href="outdoor.html" aria-label="Open portfolio category: Outdoor">
-                <div class="ph-box"><span>OUTDOOR</span></div>
-                <div class="ph-caption">OUTDOOR</div>
-              </a>
+      <!-- CATEGORY GRID -->
+      <section class="portfolio-grid" aria-label="Portfolio categories">
+        <a class="portfolio-card reveal" href="brand.html" aria-label="Brand">
+          <div class="card-box"><span>BRAND</span></div>
+        </a>
+        <a class="portfolio-card reveal" href="outdoor.html" aria-label="Outdoor">
+          <div class="card-box"><span>OUTDOOR</span></div>
+        </a>
+        <a class="portfolio-card reveal" href="grads.html" aria-label="Grads">
+          <div class="card-box"><span>GRADS</span></div>
+        </a>
+        <a class="portfolio-card reveal" href="portraits.html" aria-label="Portraits">
+          <div class="card-box"><span>PORTRAITS</span></div>
+        </a>
+        <a class="portfolio-card reveal" href="food.html" aria-label="Food">
+          <div class="card-box"><span>FOOD</span></div>
+        </a>
+        <a class="portfolio-card reveal" href="fashion.html" aria-label="Fashion">
+          <div class="card-box"><span>FASHION</span></div>
+        </a>
+      </section>
 
-              <a class="placeholder" href="portraits.html" aria-label="Open portfolio category: Portraits">
-                <div class="ph-box"><span>PORTRAITS</span></div>
-                <div class="ph-caption">PORTRAITS</div>
-              </a>
+      <!-- GALLERY STRIP -->
+      <section class="gallery-strip reveal">
+        <div class="gallery-strip-grid">
+          <div class="strip-img"></div>
+          <div class="strip-img"></div>
+          <div class="strip-img"></div>
+          <div class="strip-img"></div>
+        </div>
+      </section>
+    </div>
+  </main>
 
-              <a class="placeholder" href="grads.html" aria-label="Open portfolio category: Grads">
-                <div class="ph-box"><span>GRADS</span></div>
-                <div class="ph-caption">GRADS</div>
-              </a>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand-mini">PRANAPHOTOS</div>
+        <div class="copy">&copy; 2026 PRANAPHOTOS</div>
+      </div>
 
-              <a class="placeholder" href="fashion.html" aria-label="Open portfolio category: Fashion">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="videography.html">Videography</a>
+        <a href="prints.html">Prints</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="footer-icons" aria-label="Social links">
+        <a href="https://instagram.com/Pranaphotos_" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="#1a1a1a" stroke-width="1.6"/>
+            <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#1a1a1a" stroke-width="1.6"/>
+            <path d="M17.5 6.5h.01" stroke="#1a1a1a" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/YOURPROFILE" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.5 9.5V18" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M6.5 6.5h.01" stroke="#1a1a1a" stroke-width="2.8" stroke-linecap="round"/>
+            <path d="M10.5 18v-5.2c0-2 1.2-3.3 3-3.3s3 1.3 3 3.3V18" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M10.5 12.2v-2.7" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scroll-fade.js" defer></script>
+</body>
+</html>
