@@ -803,6 +803,18 @@ a:hover {
   overflow: hidden;
 }
 
+/* ========== JUXTAPOSE EMBED ========== */
+.juxtapose-section {
+  padding: 40px 0 60px;
+  border-top: 1px solid var(--rule);
+}
+
+.juxtapose-section iframe {
+  display: block;
+  max-width: 100%;
+  border: none;
+}
+
 /* ========== SCROLL REVEAL ========== */
 .reveal {
   opacity: 0;
