@@ -6,101 +6,142 @@
   <title>CONTACT | PRANAPHOTOS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <a class="skip-link" href="#main">SKIP TO CONTENT</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- HEADER -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">PRANAPHOTOS LLC©</a>
+    <div class="header-inner">
+      <a class="brand" href="index.html">PRANAPHOTOSLLC©</a>
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Works</a>
-        <a href="videography.html">Archives</a>
-        <a href="prints.html">Prints</a>
-        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="index.html">HOME</a>
+        <a href="portfolio.html">WORK</a>
+        <a href="videography.html">MULTIMEDIA</a>
+        <a href="contact.html" aria-current="page">CONTACT</a>
       </nav>
     </div>
   </header>
 
+  <!-- MAIN -->
   <main id="main">
     <div class="container">
 
-      <section class="contact-hero">
-        <div class="section-label reveal">Let's Work Together</div>
-        <h1 class="reveal">GET IN<br>TOUCH</h1>
-        <p class="sub reveal">FOR INQUIRIES, BOOKINGS, OR JUST TO SAY HELLO.</p>
-      </section>
+      <div class="contact-page-wrap">
 
-      <section class="contact-form-section" aria-labelledby="contact-form-heading">
-        <h2 id="contact-form-heading" class="sr-only">Contact form</h2>
+        <!-- Two-col: left content + right photo -->
+        <div class="contact-layout">
 
-        <form action="https://formspree.io/f/XXXXYYYY" method="POST">
-          <div class="form-row">
-            <div class="field">
-              <label for="name">NAME</label>
-              <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+          <!-- LEFT: heading, description, contact info -->
+          <div class="contact-left-col">
+            <h1 class="contact-page-title reveal">CONTACT</h1>
+
+            <p class="contact-page-intro reveal">
+              For bookings, use the calendar below.<br>
+              For inquiries or collaborations, book a meeting or simply send over a text or email.
+            </p>
+
+            <div class="contact-info-blocks reveal">
+
+              <div class="contact-info-block">
+                <div class="contact-info-block-label">EMAIL & PHONE</div>
+                <a href="mailto:pranaleyadri@gmail.com">pranaleyadri@gmail.com</a>
+                <a href="tel:+12083098023">+1 (208) 309-8023</a>
+              </div>
+
+              <div class="contact-info-block">
+                <div class="contact-info-block-label">SOCIALS</div>
+                <a href="https://www.instagram.com/pranaphotos_/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.linkedin.com/in/adri-meyer/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.tiktok.com/@pranaphotos_?lang=en" target="_blank" rel="noopener">TikTok</a>
+              </div>
+
             </div>
-            <div class="field">
-              <label for="email">EMAIL</label>
-              <input id="email" name="email" type="email" placeholder="your@email.com" autocomplete="email" inputmode="email" required />
-            </div>
           </div>
 
-          <div class="field">
-            <label for="subject">SUBJECT</label>
-            <input id="subject" name="subject" type="text" placeholder="Project inquiry" required />
+          <!-- RIGHT: large photo -->
+          <div class="contact-photo-col reveal">
+            <img
+              class="contact-photo"
+              src="assets/contact/contact-photo.jpg"
+              alt="Contact photo"
+              onerror="this.style.background='#1a1a1a'; this.style.minHeight='600px'; this.removeAttribute('onerror');"
+            />
           </div>
 
-          <div class="field">
-            <label for="message">MESSAGE</label>
-            <textarea id="message" name="message" rows="6" placeholder="Tell me about your vision..." required></textarea>
-          </div>
+        </div><!-- /.contact-layout -->
 
-          <input type="hidden" name="_subject" value="New PranaPhotos Contact Form Submission" />
-
-          <div class="honeypot" aria-hidden="true">
-            <label for="website">WEBSITE</label>
-            <input id="website" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
-          </div>
-
-          <div class="form-submit">
-            <button class="btn-send" type="submit">SEND MESSAGE →</button>
-            <p class="form-note">If the form fails, email me directly at <a href="mailto:adrimeyer@pranaphotos.com">adrimeyer@pranaphotos.com</a></p>
-          </div>
-        </form>
-      </section>
-
-      <section class="gallery-strip reveal">
-        <div class="gallery-strip-grid">
-          <div class="strip-img"></div>
-          <div class="strip-img"></div>
-          <div class="strip-img"></div>
-          <div class="strip-img"></div>
+        <!-- CAL.COM BOOKING WIDGET -->
+        <div class="cal-widget-wrap reveal">
+          <!-- Cal.com inline embed for pranaphotosllc -->
+          <div style="width:100%;overflow:scroll" id="my-cal-inline"></div>
+          <script type="text/javascript">
+            (function (C, A, L) {
+              let p = function (a, ar) { a.q.push(ar); };
+              let d = C.document;
+              C.Cal = C.Cal || function () {
+                let cal = C.Cal;
+                let ar = arguments;
+                if (!cal.loaded) {
+                  cal.ns = {};
+                  cal.q = cal.q || [];
+                  d.head.appendChild(d.createElement("script")).src = A;
+                  cal.loaded = true;
+                }
+                if (ar[0] === L) {
+                  const api = function () { p(api, arguments); };
+                  const namespace = ar[1];
+                  api.q = api.q || [];
+                  if (typeof namespace === "string") {
+                    cal.ns[namespace] = cal.ns[namespace] || api;
+                    p(cal.ns[namespace], ar);
+                    p(cal, ["initNamespace", namespace]);
+                  } else p(cal, ar);
+                  return;
+                }
+                p(cal, ar);
+              };
+            })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", { origin: "https://cal.com" });
+            Cal("inline", {
+              elementOrSelector: "#my-cal-inline",
+              calLink: "pranaphotosllc",
+              layout: "month_view",
+              config: {
+                theme: "dark"
+              }
+            });
+            Cal("ui", {
+              styles: { branding: { brandColor: "#000000" } },
+              hideEventTypeDetails: false,
+              layout: "month_view"
+            });
+          </script>
         </div>
-      </section>
 
-    </div>
+      </div><!-- /.contact-page-wrap -->
+    </div><!-- /.container -->
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-left">
         <div class="brand-mini">PRANAPHOTOS LLC©</div>
-        <div class="copy">&copy; 2026 PRANAPHOTOS</div>
+        <div class="copy">© 2026 PRANAPHOTOS</div>
       </div>
       <nav class="footer-nav">
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Works</a>
-        <a href="videography.html">Archives</a>
-        <a href="prints.html">Prints</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html">HOME</a>
+        <a href="portfolio.html">WORK</a>
+        <a href="videography.html">MULTIMEDIA</a>
+        <a href="prints.html">PRINTS</a>
+        <a href="contact.html">CONTACT</a>
       </nav>
       <div class="footer-icons">
         <a href="https://instagram.com/Pranaphotos_" target="_blank" rel="noopener" aria-label="Instagram">
@@ -116,6 +157,11 @@
             <path d="M6.5 6.5h.01" stroke="#f2ede6" stroke-width="2.8" stroke-linecap="round"/>
             <path d="M10.5 18v-5.2c0-2 1.2-3.3 3-3.3s3 1.3 3 3.3V18" stroke="#f2ede6" stroke-width="1.8" stroke-linecap="round"/>
             <path d="M10.5 12.2v-2.7" stroke="#f2ede6" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@pranaphotos_?lang=en" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#f2ede6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       </div>
